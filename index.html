@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nupur · Full Stack Developer</title>
+<meta name="description" content="Portfolio of Nupur, a third-year Computer Engineering student building full stack campus tools: a campus tree map, a face-recognition attendance system and an enquiry chatbot.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a><div id="cur"></div>
+<header class="nav"><div class="wrap"><b>nupur<span style="color:var(--a)">.</span></b>
+<a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+<button class="btn" id="xr" aria-pressed="false" title="Show how this page is built">X-Ray</button>
+<button class="btn" id="th" aria-label="Change colour theme">Theme</button>
+<button class="btn" id="kb" aria-label="Open command palette">Ctrl K</button></div></header>
+
+<main id="main">
+<section class="hero wrap" id="home" data-x="section.hero · CSS grid, clamp() fluid type, typewriter in JS">
+<i class="blob" style="width:340px;height:340px;background:var(--a);right:2%;top:8%"></i><i class="blob" style="width:260px;height:260px;background:var(--b);left:-4%;bottom:6%"></i>
+<h1>Nupur builds things that work.</h1>
+<p class="lead">Third-year Computer Engineering student and <span id="role"></span><span class="caret"></span> who loves to code.</p>
+<div class="row"><a class="btn p" href="#projects">See my work</a><button class="btn" id="tourb">Take the 30-second tour</button><button class="btn" id="bugb">Squash some bugs</button></div>
+<div class="stats"><span><b>3</b>campus tools built</span><span><b>1</b>face-recognition pipeline</span><span><b>4</b>colour themes to try</span></div>
+</section>
+
+<section id="skills" class="wrap"><h2>My skill tree</h2><p class="sub">Every branch grew from something I built.</p>
+<div class="rv" data-x="div.tree · 4-column grid, SVG branches drawn with stroke-dashoffset">
+<div class="tree" id="tree"></div>
+<svg class="tsvg" viewBox="0 0 800 110" preserveAspectRatio="none" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M100 0C100 70 400 50 400 110"/><path vector-effect="non-scaling-stroke" d="M300 0C300 60 400 60 400 110"/><path vector-effect="non-scaling-stroke" d="M500 0C500 60 400 60 400 110"/><path vector-effect="non-scaling-stroke" d="M700 0C700 70 400 50 400 110"/></svg>
+<p class="trunk">Full stack</p></div></section>
+
+<section id="projects" class="wrap"><h2>Things I’ve built</h2><p class="sub">Real tools for a real campus. Tap, scan and ask.</p>
+
+<article class="card proj rv" data-x="article.proj · map pins rendered from a JS array">
+<div class="vis" id="map"><i class="bld"></i></div>
+<div><h3>SHASWAT campus tree map</h3>
+<p>A living register of every tree on campus. Each tree has a species, family, division, photo and GPS point, plotted on a satellite map with search, division filters and clustering.</p>
+<p>Tap a pin to meet an example tree.</p>
+<details><summary>Case study</summary><p><b>Problem:</b> tree records lived on paper, with no way to find or locate a tree.<br><b>Built:</b> tree directory, interactive map, dashboard and a green campus section.<br><b>Stack:</b> Vite, Leaflet, Esri satellite tiles <span class="chip t" style="opacity:1;transform:none">add the rest</span></p></details>
+<small>Example entries and pin positions only. The real data stays private.</small></div></article>
+
+<article class="card proj rv" data-x="article.proj · CSS keyframes scan line, JS pipeline stepper">
+<div class="vis" id="cam"><div class="frame"><svg viewBox="0 0 100 100" width="120" aria-label="Sample face"><circle cx="50" cy="55" r="27" fill="#f3c9a8"/><path d="M22 52c0-32 56-32 56 0c-9-15-47-15-56 0z" fill="#3a2a38"/><circle cx="41" cy="57" r="3" fill="#3a2a38"/><circle cx="59" cy="57" r="3" fill="#3a2a38"/><path d="M42 69q8 7 16 0" stroke="#3a2a38" fill="none" stroke-width="3" stroke-linecap="round"/></svg><div class="bbox"><span id="lbl">face found</span></div><div class="scan"></div></div>
+<div id="pipe"><span>Detect</span><span>Encode</span><span>Match</span><span>Log</span></div>
+<ul class="ros" id="ros"></ul></div>
+<div><h3>Smart attendance with face recognition</h3>
+<p>The camera finds a face, turns it into an encoding, matches it against enrolled students and records attendance. No roll calls, no paper.</p>
+<p><button class="btn p" id="runp">Run the pipeline</button></p>
+<form class="gb" id="gb"><input id="gn" placeholder="Your name" aria-label="Your name" required maxlength="30"><button class="btn">Mark me present</button></form>
+<details><summary>Case study</summary><p><b>Problem:</b> manual attendance is slow and easy to fake.<br><b>Built:</b> enrolment, live recognition and attendance logging.<br><b>Stack:</b> face recognition <span class="chip t" style="opacity:1;transform:none">add the rest</span></p></details>
+<small>Demo screen with sample names. No real student data is shown.</small></div></article>
+
+<article class="card proj rv" data-x="article.proj · keyword-matched replies in plain JS">
+<div class="vis"><div class="chat"><div class="msgs" id="msgs" aria-live="polite"><div class="m">Hi! Ask me about Nupur’s work.</div></div><div class="qs" id="qs"></div><form class="gb" id="cf2"><input id="cin" placeholder="Type a question" aria-label="Ask a question"><button class="btn">Send</button></form></div></div>
+<div><h3>College enquiry FAQ chatbot</h3>
+<p>Answers common college enquiries instantly, so students and parents get what they need without waiting for an office to open.</p>
+<details><summary>Case study</summary><p><b>Problem:</b> the same questions arrive again and again.<br><b>Built:</b> a chatbot that answers them on the college website.<br><b>Stack:</b> <span class="chip t" style="opacity:1;transform:none">add your stack</span></p></details>
+<small>The chat on the left is a mini demo that answers questions about me.</small></div></article></section>
+
+<section id="journey" class="wrap"><h2>git log --oneline</h2><p class="sub">My journey as commits. Pick a branch.</p>
+<div class="row" id="br" style="margin-bottom:12px"></div><ul class="log" id="log" data-x="ul.log · filtered by branch, hashes generated from the message"></ul></section>
+
+<section id="contact" class="wrap"><h2>Say hello</h2><p class="sub">Looking for a developer who ships? Let’s talk.</p>
+<div class="row" style="margin-bottom:18px"><a class="btn p" id="gh" href="#">GitHub</a><a class="btn" id="li" href="#">LinkedIn</a></div>
+<form class="cf" id="cf"><input name="n" placeholder="Your name" aria-label="Your name" required><textarea name="m" rows="4" placeholder="Your message" aria-label="Your message" required></textarea><button class="btn p" style="justify-self:start">Send message</button></form></section>
+</main>
+<footer>Built by hand with HTML, CSS and JavaScript. Press Ctrl K for shortcuts.</footer>
+
+<dialog id="pal" aria-label="Command palette"><input id="q" placeholder="Type a command…" aria-label="Command"><ul id="cmds"></ul></dialog>
+<div id="toast" role="status"></div>
+
+<script src="main.js" defer></script>
+</body>
+</html>
